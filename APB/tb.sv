@@ -67,9 +67,9 @@ task apb_read(input [31:0] addr, output logic [31:0] data);
 
   @(posedge pclk);
   wait (pready == 1'b1);
+  data[31:0] = prdata[31:0];
 
   @(posedge pclk);
-  data[31:0]<=prdata[31:0];
   psel <= 1'b0;
   penable <= 1'b0;
 
